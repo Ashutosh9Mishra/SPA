@@ -1,0 +1,14 @@
+<div  ng-controller="apiCntrl">
+
+<input ng-model="searchCity" type="text" placeholder="Type Word to Search">
+
+	<button ng-click="callMe()">Click Me</button>
+	
+	
+	<ul>
+		<li ng-repeat = "word in result">
+			{{word}}
+		</li>
+	</ul>
+
+</div>

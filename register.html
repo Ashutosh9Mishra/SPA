@@ -1,0 +1,84 @@
+<div ng-controller="myctrl">
+<div id="form" style="padding:5px;margin-top:10px;">	
+	<form>
+		URL:<input type="url" ng-model="url" placeholder="Enter Post URL" style="width:550px;height:20px;">
+		<input type="submit" id="post" value="Post">
+	</form>
+	</div>
+	<div class="comment" style="">
+	<fieldset>
+		<legend style="color:#df2a81">NOTE CRUD</legend>
+
+		
+		<table>
+			<tr>
+				<td><label for="" style="color:blue">POST</label></td>
+				<td><label for=""><img src="{{url}}"></label></td>
+			</tr>
+			<tr>
+			<td>
+<div class="post1">
+		<table >
+			<tbody>
+				<tr ng-class="{marking:note.mark}" ng-click="note.toggle()" ng-repeat="note in noteListData">
+				<td>
+				<div class="tabpost">
+				<table border="1px"cellspacing="2px;" >
+				<tr><td>
+					{{note.id}}
+                   </td>
+                   <td>
+                    <h2>{{note.author}}</h2><hr><br>
+                       <table border="0">
+                    <tr>
+                        <td >
+					{{note.desc}}
+                    </td>
+                    </tr>
+                    </table>
+                    </td>
+                   
+                </tr>
+                   </table>
+                  
+                </div>
+				</tr>
+			</tbody>
+		</table>
+    </div>
+				
+			</td>
+			</tr>
+			</table>
+			
+	</fieldset>
+	<div class="com">
+		<fieldset>
+			<lagend>Comment</lagend>
+			<table>
+			<tr>
+				<td><label for="" style="color:#df2a81">Noteid</label></td>
+				<td><label for="">{{id}}</label></td>
+			</tr>
+			<tr>
+				<td><label for=""  style="color:#df2a81">Desc</label></td>
+				<td><textarea ng-model="desc"  cols="30" rows="10"></textarea></td>
+			</tr>
+			<tr>
+				<td><label for="" style="color:#df2a81">Title</label></td>
+				<td><input ng-model="author" type="text"></td>
+			</tr>
+	</table>
+		<table>
+			<tr>
+				<td><button ng-click="add()" style="color:#2078c5">Post</button></td>
+				<td><button ng-click="delete()">Delete</button></td>
+			</tr>
+	</table>
+		Number of Records ::: {{noteListData.length}}
+			
+		</fieldset>
+		</div>
+	
+</div>
+</div>
